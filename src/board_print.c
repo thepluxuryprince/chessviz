@@ -1,7 +1,7 @@
 #include "board_print.h"
 #include "board.h"
 #include <stdio.h>
-void print_board()
+void print_board(char chessboard[h][v])
 {
     printf(" | a  b  c  d  e  f  g  h |\n____________________________");
     for (int j = v - 1; j >= 0; j--) {

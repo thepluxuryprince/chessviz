@@ -2,6 +2,10 @@
 #include "board_print.h"
 int main()
 {
+    char chessboard[8][8];
+    const int h = 8; //горизонталь
+    const int v = 8; //вертикаль
+
     King whiteKing = {4, 0, 'K'}; //инициализация фигур
     chessboard[whiteKing.horizontal][whiteKing.vertical] = whiteKing.name;
     King blackKing = {3, 7, 'k'};
@@ -75,8 +79,8 @@ int main()
     Pawn blackPawn8 = {7, 6, 'p'};
     chessboard[blackPawn8.horizontal][blackPawn8.vertical] = blackPawn8.name;
     /*Инициализация фигур*/
-    char chessboard[h][v];
     int game = 1;
+    fill_board(chessboard, h, v);
     while (game) {
         print_board(chessboard, h, v);
         game = 0;

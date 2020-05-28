@@ -2,8 +2,6 @@
 #define BOARD_H
 #include <stdio.h>
 
-const int h = 8; //горизонталь
-const int v = 8; //вертикаль
 /*Прототипы фигур*/
 typedef struct {
     int horizontal;
@@ -36,5 +34,5 @@ typedef struct {
     char name;
 } King;
 /*Прототипы фигур*/
-int fill_board(char* chessboard, const int h, const int v);
+int fill_board(char (*chessboard)[8], const int hor, const int vert);
 #endif

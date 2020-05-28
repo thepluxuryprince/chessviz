@@ -3,8 +3,12 @@
 int main()
 {
     char chessboard[8][8];
-    const int h = 8; //горизонталь
-    const int v = 8; //вертикаль
+    const int h = 8;  //горизонталь
+    const int v = 8;  //вертикаль
+    char word, word1; //буквы хода
+    int num, num1;    //числа хода
+
+    fill_board(chessboard, h, v); //заполняем пробелами доску
 
     King whiteKing = {4, 0, 'K'}; //инициализация фигур
     chessboard[whiteKing.horizontal][whiteKing.vertical] = whiteKing.name;
@@ -80,10 +84,10 @@ int main()
     chessboard[blackPawn8.horizontal][blackPawn8.vertical] = blackPawn8.name;
     /*Инициализация фигур*/
     int game = 1;
-    fill_board(chessboard, h, v);
     while (game) {
         print_board(chessboard, h, v);
-        game = 0;
+        scanf("%c %d %c %d", &word, &num, &word1, &num1);
+        file_print_board(word, num, word1, num1, chessboard);
     }
     return 0;
 }

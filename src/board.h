@@ -36,5 +36,5 @@ typedef struct {
     char name;
 } King;
 /*Прототипы фигур*/
-int fill_board(char chessboard[h][v]);
+int fill_board(char* chessboard, const int h, const int v);
 #endif

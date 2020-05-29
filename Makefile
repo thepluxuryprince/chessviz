@@ -17,7 +17,7 @@ bin/main: build/main.o build/board.o build/board_print.o bin
 build/test.o: test/test.c build
 	gcc -I thirdparty -I src -c test/test.c -o build/test.o
 	
-bin/main-test: build/test.o build/board.o build/board_print.o bin
+bin/test: build/test.o build/board.o build/board_print.o bin
 	gcc -Wall -Werror build/test.o build/board.o build/board_print.o -lm -o bin/test
 
 .PHONY : clean

@@ -1,152 +1,155 @@
 #include "board.h"
 #include "board_print.h"
+#include <stdio.h>
 int main()
 {
     char chessboard[8][8];
-    struct input {
-        char word[2];
-        int num[2];
-    };
+    char *word, *word1;
+    int *num, *num1;
     int flag, check = 0;
     int n, n1, w, w1; //числа для движения
 
-    fill_board(chessboard); //заполняем пробелами доску
+    fill_board(chessboard); //заполняем доску
     print_board(chessboard);
     file_print_board(chessboard);
     while (1) {
         for (flag = 0; flag != 4;) {
-            scanf("%c%d%c%d", &word, &num, &word1, &num1);
-            fprint_move(word, num, word1, num1);
-            if (word == 'a') {
+            word = (char*)malloc(sizeof(char) * 1);
+            word1 = (char*)malloc(sizeof(char) * 1);
+            num = (int*)malloc(sizeof(int) * 1);
+            num1 = (int*)malloc(sizeof(int) * 1);
+            scanf("  %c%d%c%d", word, num, word1, num1);
+            fprint_move(*word, *num, *word1, *num1);
+            if (*word == 'a') {
                 w = 0;
                 flag++;
             }
-            if (word == 'b') {
+            if (*word == 'b') {
                 w = 1;
                 flag++;
             }
-            if (word == 'c') {
+            if (*word == 'c') {
                 w = 2;
                 flag++;
             }
-            if (word == 'd') {
+            if (*word == 'd') {
                 w = 3;
                 flag++;
             }
-            if (word == 'e') {
+            if (*word == 'e') {
                 w = 4;
                 flag++;
             }
-            if (word == 'f') {
+            if (*word == 'f') {
                 w = 5;
                 flag++;
             }
-            if (word == 'g') {
+            if (*word == 'g') {
                 w = 6;
                 flag++;
             }
-            if (word == 'h') {
+            if (*word == 'h') {
                 w = 7;
                 flag++;
             }
-            if (num == 1) {
+            if (*num == 1) {
                 n = 0;
                 flag++;
             }
-            if (num == 2) {
+            if (*num == 2) {
                 n = 1;
                 flag++;
             }
-            if (num == 3) {
+            if (*num == 3) {
                 n = 2;
                 flag++;
             }
-            if (num == 4) {
+            if (*num == 4) {
                 n = 3;
                 flag++;
             }
-            if (num == 5) {
+            if (*num == 5) {
                 n = 4;
                 flag++;
             }
-            if (num == 6) {
+            if (*num == 6) {
                 n = 5;
                 flag++;
             }
-            if (num == 7) {
+            if (*num == 7) {
                 n = 6;
                 flag++;
             }
-            if (num == 8) {
+            if (*num == 8) {
                 n = 7;
                 flag++;
             }
-            if (word1 == 'a') {
+            if (*word1 == 'a') {
                 w1 = 0;
                 flag++;
             }
-            if (word1 == 'b') {
+            if (*word1 == 'b') {
                 w1 = 1;
                 flag++;
             }
-            if (word1 == 'c') {
+            if (*word1 == 'c') {
                 w1 = 2;
                 flag++;
             }
-            if (word1 == 'd') {
+            if (*word1 == 'd') {
                 w1 = 3;
                 flag++;
             }
-            if (word1 == 'e') {
+            if (*word1 == 'e') {
                 w1 = 4;
                 flag++;
             }
-            if (word1 == 'f') {
+            if (*word1 == 'f') {
                 w1 = 5;
                 flag++;
             }
-            if (word1 == 'g') {
+            if (*word1 == 'g') {
                 w1 = 6;
                 flag++;
             }
-            if (word1 == 'h') {
+            if (*word1 == 'h') {
                 w1 = 7;
                 flag++;
             }
-            if (num1 == 1) {
+            if (*num1 == 1) {
                 n1 = 0;
                 flag++;
             }
-            if (num1 == 2) {
+            if (*num1 == 2) {
                 n1 = 1;
                 flag++;
             }
-            if (num1 == 3) {
+            if (*num1 == 3) {
                 n1 = 2;
                 flag++;
             }
-            if (num1 == 4) {
+            if (*num1 == 4) {
                 n1 = 3;
                 flag++;
             }
-            if (num1 == 5) {
+            if (*num1 == 5) {
                 n1 = 4;
                 flag++;
             }
-            if (num1 == 6) {
+            if (*num1 == 6) {
                 n1 = 5;
                 flag++;
             }
-            if (num1 == 7) {
+            if (*num1 == 7) {
                 n1 = 6;
                 flag++;
             }
-            if (num1 == 8) {
+            if (*num1 == 8) {
                 n1 = 7;
                 flag++;
             }
             if (flag != 4) {
-                printf("Wrong input\n");
+                printf("Wrong A\n");
                 flag = 0;
             }
             flag = 0;

@@ -121,7 +121,6 @@ int main()
             w = 8;
             flag++;
         }
-
         if (num == 1) {
             n = 8;
             flag++;
@@ -154,7 +153,6 @@ int main()
             n = 1;
             flag++;
         }
-
         if (word1 == 'a') {
             w1 = 1;
             flag++;
@@ -187,7 +185,6 @@ int main()
             w1 = 8;
             flag++;
         }
-
         if (num1 == 1) {
             n1 = 8;
             flag++;
@@ -220,7 +217,6 @@ int main()
             n1 = 1;
             flag++;
         }
-
         if (flag != 4) {
             printf("Wrong input\n");
         }
